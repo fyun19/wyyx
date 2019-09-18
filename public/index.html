@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>exer_yx</title>
+    <!-- 引入重置样式 -->
+    <link rel="stylesheet" href="/css/reset.css">
+
+    <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+    <script>
+      // 解决点击延时0.3s问题
+      if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function () {
+          FastClick.attach(document.body);
+        }, false);
+      }
+
+      if (!window.Promise) {
+    document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
+  }
+  // 取消浏览器默认行为
+  document.addEventListener('touchstart', function (event) {
+    event.preventDefault(); //a元素不能进行跳转
+  });
+
+      // rem适配
+      !(function () {
+    let width = document.documentElement.clientWidth;
+    const styleNode = document.createElement('style');
+    styleNode.innerHTML = 'html{font-size: ' + width / 10 + 'px  !important;}';
+    document.head.appendChild(styleNode);
+  })()
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but exer_yx doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
